@@ -3,10 +3,12 @@
 @tailwind utilities;
 
 
+.text {
+    @apply border border-gray-300 rounded  text-white;
+  }
+
 h2{
     color: #130F26;
-
-font-family: DM Sans;
 font-size: 1.125rem;
 font-style: normal;
 font-weight: 700;
@@ -14,7 +16,6 @@ line-height: normal;
 }
 
 h5{color: #898989;
-    font-family: DM Sans;
     font-size: 0.75rem;
     font-style: normal;
     font-weight: 500;
