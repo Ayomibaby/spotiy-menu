@@ -9,7 +9,7 @@ export default function TopArtists() {
         <section id='heading'>
             <div>
                 <div className='flex gap-x-2'>
-                <h2>Top Artists</h2>
+                <h2 className='text'>Top Artists</h2>
                 <img src={MoreCircle}/>
                 </div>
                 <h5 className='mt-[0.5rem] flex gap-x-1'>You listened to <h5 className='text-[#306EF9]'>17 Artists</h5> this past week</h5>
