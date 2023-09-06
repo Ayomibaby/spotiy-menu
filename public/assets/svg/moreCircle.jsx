@@ -1,4 +1,6 @@
-<svg width="15" height="10" viewBox="0 0 15 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+
+export const MoreCircle = <svg width="15" height="10" viewBox="0 0 15 10" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect width="15" height="10" rx="3" fill="#BBBBBB"/>
 <path fill-rule="evenodd" clip-rule="evenodd" d="M11.2643 5.20898H11.2701H11.2643Z" fill="#B4B4B4"/>
 <path d="M11.2643 5.20898H11.2701" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -6,4 +8,9 @@
 <path d="M7.61597 5.20996H7.62047" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 <path fill-rule="evenodd" clip-rule="evenodd" d="M3.96722 5.20898H3.973H3.96722Z" fill="#B4B4B4"/>
 <path d="M3.96722 5.20898H3.973" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+
+export const dropdown = <svg width="7" height="4" viewBox="0 0 7 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M6 1.3999L3.5 3.3999L1 1.3999" stroke="#306EF9" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
