@@ -10,7 +10,7 @@ export default function Home() {
       <h1 className="text-4xl ">Ayodeji Atanda.</h1>
       <div>
         <h2 className="font-bold text-3xl">
-          I'm a freelance Fullstack Web Developer
+          I'm a freelance Fullstack Web Developed
         </h2>
       </div>
 
