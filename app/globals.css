@@ -14,6 +14,7 @@ h2{
 
 
 
+
 h5{
     @apply text-white text-[0.75rem] font-medium  md:text-[1rem]
   
@@ -28,4 +29,3 @@ h4{
 h6{
     @apply text-white text-[0.75rem] font-bold md:text-[1.5rem]
   
-}
