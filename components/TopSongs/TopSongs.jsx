@@ -1,42 +1,38 @@
-
 import React from "react";
-import { MoreCircle, dropdown, next } from "@/public/assets/svg/moreCircle";
-import ArtistCard from "../UI/artistCard";
 import SectionHeading from "../UI/sectionHeading";
+import SongCard from "../UI/SongCard";
+import { next } from "@/public/assets/svg/moreCircle";
 import Link from "next/link";
 
-export default function TopArtists() {
+export default function TopSongs() {
   return (
-    <section id="topArtists">
-      <section>
-        <SectionHeading />
-      </section>
+    <section className="my-[5rem]">
+      <SectionHeading />
 
       <section className="flex justify-between w-[100%]">
         <div>
-          <ArtistCard />
+          <SongCard />
         </div>
         <div>
-          <ArtistCard />
+          <SongCard />
         </div>
         <div>
-          <ArtistCard />
+          <SongCard />
         </div>
         <div>
-          <ArtistCard />
+          <SongCard />
         </div>
         <div className="hidden md:contents">
-          <ArtistCard />
+          <SongCard />
         </div>
       </section>
 
-      <Link href={"/topArtists"}>
-        <section className="mt-[1.5rem] flex justify-end  gap-x-1 items-center  ">
+      <Link href={"/topTracks"}>
+        <section className="mt-[1.5rem] flex  gap-x-1  items-center justify-end ">
           <h4 className="font-bold">SEE ALL</h4>
           <div className="md:hidden contents">{next}</div>
         </section>
       </Link>
-
     </section>
   );
 }
