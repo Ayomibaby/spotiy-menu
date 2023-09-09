@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 
-.text {
+h3 {
     @apply border border-gray-300 rounded  text-white;
   }
 
