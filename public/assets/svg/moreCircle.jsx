@@ -14,3 +14,7 @@ export const MoreCircle = <svg width="15" height="10" viewBox="0 0 15 10" fill="
 export const dropdown = <svg width="7" height="4" viewBox="0 0 7 4" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M6 1.3999L3.5 3.3999L1 1.3999" stroke="#306EF9" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
+
+export const next = <svg width="4" height="7" viewBox="0 0 4 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 0.899902L3 3.3999L1 5.8999" stroke="#306EF9" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
