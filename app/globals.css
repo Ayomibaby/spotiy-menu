@@ -8,40 +8,24 @@ h3 {
   }
 
 h2{
-    color: #130F26;
-font-size: 1.125rem;
-font-style: normal;
-font-weight: 700;
-line-height: normal;
+    @apply text-white text-[1.125rem] font-bold md:text-[1.875rem]
+   
 }
 
 
 
 h5{
-    color: #898989;
-    font-size: 0.75rem;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    letter-spacing: -0.0075rem;
+    @apply text-white text-[0.75rem] font-medium  md:text-[1rem]
+  
 }
 
     
 h4{
-    
-color: #306EF9;
-font-family: DM Sans;
-font-size: 0.625rem;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
+   @apply text-[#22C55E] text-[0.625rem] font-normal md:text-[1rem]
+
 }
 
 h6{
-    color: #130F26;
-font-family: DM Sans;
-font-size: 0.75rem;
-font-style: normal;
-font-weight: 700;
-line-height: normal;
+    @apply text-white text-[0.75rem] font-bold md:text-[1.5rem]
+  
 }

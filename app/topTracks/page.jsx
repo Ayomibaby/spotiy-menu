@@ -7,10 +7,10 @@ import SectionHeading from '@/components/UI/sectionHeading'
 
 export default function TopSongs() {
   return (
-  <section className='mt-[3rem] w-[90%] mx-auto'>
+  <section className='my-[3rem] w-[90%] md:w-[95%] mx-auto'>
     <SectionHeading />
 
-    <section className='grid grid-cols-4 gap-x-4'>
+    <section className='grid grid-cols-4  md:grid-cols-5 md:gap-x-6 gap-x-4 '>
        
         <SongCard/>
         <SongCard/>

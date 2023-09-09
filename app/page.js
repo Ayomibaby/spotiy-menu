@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="w-[90%] mx-auto mt-[2rem] ">
+    <div className="w-[90%] md:w-[95%] mx-auto mt-[2rem] ">
     <TopArtists/>
     <TopSongs/>
     </div>
