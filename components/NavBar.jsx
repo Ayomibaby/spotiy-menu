@@ -8,7 +8,14 @@ export default function NavBar() {
   const [navbar, setNavbar] = useState(false);
 
   return (
-    // <nav className="w-full bg-transparent  text-white  shadow fixed z-30 font-programme ">
+   
+    <nav className="h-[4rem] border border-b-1 bg-white w-[100%] pt-[2rem] px-[1rem]">
+      <h2>LOGO</h2>
+    </nav>
+  );
+}
+
+ // <nav className="w-full bg-transparent  text-white  shadow fixed z-30 font-programme ">
     //   <div className="justify-between px-4 mx-auto md:max-w-7xl md:items-center lg:flex md:px-8">
     //     <div>
     //       <div className="flex items-center justify-between py-3 md:py-5 lg:py-2 ">
@@ -106,6 +113,3 @@ export default function NavBar() {
     //     </div>
     //   </div>
     // </nav>
-    <nav></nav>
-  );
-}
