@@ -9,10 +9,17 @@ export default function NavBar() {
 
   return (
     <nav className="h-[4rem]  bg-[#121213]  pt-[1.5rem] ">
-      <div className="w-[90%] md:w-[95%] mx-auto ">
+      <div className="w-[90%] md:w-[95%] mx-auto flex justify-between items-center">
         <h2>
-          <Link href={"/"}> LOGO </Link>
+          <Link href={"/Stats/home"}> LOGO </Link>
         </h2>
+
+        <ul className="flex gap-x-4">
+        <li>Contact us</li>
+        <Link href={"/"}>
+          <li>Logout</li>
+          </Link>
+        </ul>
       </div>
     </nav>
   );

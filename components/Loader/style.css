@@ -1,0 +1,14 @@
+/* .animatedDiv{
+animation: moveleft 1s ease-in infinite ;
+
+}
+
+@keyframes moveleft {
+  0%{
+    transform: translateX(-20px);
+        
+  }
+  100%{
+    transform: translateX(20px);
+  }
+} */
