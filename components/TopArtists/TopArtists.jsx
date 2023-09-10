@@ -1,3 +1,4 @@
+
 import React from "react";
 import { MoreCircle, dropdown, next } from "@/public/assets/svg/moreCircle";
 import ArtistCard from "../UI/artistCard";
@@ -35,6 +36,7 @@ export default function TopArtists() {
           <div className="md:hidden contents">{next}</div>
         </section>
       </Link>
+
     </section>
   );
 }
