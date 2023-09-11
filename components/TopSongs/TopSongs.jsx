@@ -27,7 +27,7 @@ export default function TopSongs() {
         </div>
       </section>
 
-      <Link href={"/topTracks"}>
+      <Link href={"/Stats/topTracks"}>
         <section className="mt-[1.5rem] flex  gap-x-1  items-center justify-end ">
           <h4 className="font-bold">SEE ALL</h4>
           <div className="md:hidden contents">{next}</div>

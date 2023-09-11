@@ -30,7 +30,7 @@ export default function TopArtists() {
         </div>
       </section>
 
-      <Link href={"/topArtists"}>
+      <Link href={"/Stats/topArtists"}>
         <section className="mt-[1.5rem] flex justify-end  gap-x-1 items-center  ">
           <h4 className="font-bold">SEE ALL</h4>
           <div className="md:hidden contents">{next}</div>
