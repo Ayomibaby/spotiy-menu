@@ -13,11 +13,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${dm_Sans.className} bg-black `}>
-       <section>
-        {children}
-        </section>
+      <body className={`${dm_Sans.className} bg-black`}>
+       <NavBar/>
+       {children}
       </body>
     </html>
   );
 }
+
