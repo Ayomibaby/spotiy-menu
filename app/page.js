@@ -9,7 +9,7 @@ export default function Home() {
     {/* <Loader/> */}
     <div className="m-auto">
     <h2 className="text-center mb-[1rem]">Logo</h2>
-    <Link href={"/Stats/home"}>
+    <Link href={"/home"}>
     <button className="text-white font-semibold text-[1rem] border border-white rounded-lg py-[1rem] px-[1rem] hover:bg-white hover:text-black">Login with spotify</button>
     </Link>
     </div>
