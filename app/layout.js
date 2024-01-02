@@ -1,5 +1,4 @@
 import NavBar from "@/components/NavBar";
-import { SessionProvider } from "next-auth/react";
 import "./globals.css";
 import { Inter, DM_Sans } from "next/font/google";
 import Provider from "@/context/client_provider";
