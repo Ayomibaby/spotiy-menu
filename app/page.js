@@ -1,5 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
+import SpotifySignInButton from "@/components/Buttons/SpotifySignInButton";
 import List from "@/components/List";
+import Spotify from "next-auth/providers/spotify";
 
 import Link from "next/link";
 
@@ -12,6 +14,7 @@ export default function Home() {
     <Link href={"/home"}>
     <button className="text-white font-semibold text-[1rem] border border-white rounded-lg py-[1rem] px-[1rem] hover:bg-white hover:text-black">Login with spotify</button>
     </Link>
+    <SpotifySignInButton/>
     </div>
    </section>
   );
