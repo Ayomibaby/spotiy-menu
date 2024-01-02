@@ -1,20 +1,38 @@
-"use client"
+"use client";
 
-import { signIn } from 'next-auth/react'
-import React from 'react'
+import { signIn, signOut } from "next-auth/react";
+import React from "react";
 
-const SpotifySignInButton = () => {
-const handleClick = () =>{
-    signIn("spotify")
-}
+export const SpotifySignInButton = () => {
+  const handleClick = () => {
+    signIn("spotify", { callbackUrl: "/" });
+  };
 
   return (
     <div>
-        <button onClick={handleClick} className='bg-green-600 text-black rounded-2xl'>
-           <span>Continue with Spotify</span> 
-        </button>
+      <button
+        onClick={handleClick}
+        className="bg-green-600 text-black rounded-2xl"
+      >
+        <span>Continue with Spotify</span>
+      </button>
     </div>
-  )
-}
+  );
+};
 
-export default SpotifySignInButton
+export const SpotifySignOut = () => {
+  const handleClick = () => {
+    signOut();
+  };
+
+  return (
+    <div>
+      <button
+        onClick={handleClick}
+        className="bg-green-600 text-black rounded-2xl"
+      >
+        <span>Log out</span>
+      </button>
+    </div>
+  );
+};
