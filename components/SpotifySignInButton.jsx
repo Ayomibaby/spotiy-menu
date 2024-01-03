@@ -12,9 +12,9 @@ export const SpotifySignInButton = () => {
     <div>
       <button
         onClick={handleClick}
-        className="bg-green-600 text-black rounded-2xl"
+        className="bg-green-600 text-black px-5 py-3 font-semibold rounded-xl"
       >
-        <span>Continue with Spotify</span>
+        Continue with Spotify
       </button>
     </div>
   );
@@ -29,9 +29,9 @@ export const SpotifySignOut = () => {
     <div>
       <button
         onClick={handleClick}
-        className="bg-green-600 text-black rounded-2xl"
+        className="bg-green-600 text-black text-xs px-3 py-1 font-semibold rounded-xl"
       >
-        <span>Log out</span>
+      Log out
       </button>
     </div>
   );

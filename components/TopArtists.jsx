@@ -1,42 +1,47 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { MoreCircle, dropdown, next } from "@/public/assets/svg/moreCircle";
-import ArtistCard from "./artistCard";
 import SectionHeading from "./sectionHeading";
 import Link from "next/link";
 import { useSession } from "next-auth/react";
 import spotifyApi from "@/lib/spotify";
 import useSpotify from "@/hooks/useSpotify";
+import ArtistCard from "@/components/ArtistCard";
 
 export default function TopArtists() {
   const spotifyApi = useSpotify();
   const { data: session } = useSession();
   const [artists, setArtists] = useState([]);
+
   useEffect(() => {
     if (spotifyApi.getAccessToken) {
       spotifyApi
-        .getMyTopArtists()
-        .then((data) => setArtists(data.body.items.slice(0, 5)));
+        .getMyTopArtists({time_range: "long_term"})
+        .then((data) => {
+          setArtists(data.body.items.slice(0, 7))
+          console.log(data)
+        })
+        .catch(err =>{
+          return err
+        });
     }
   }, [session, spotifyApi]);
-  return (
-    <section id="topArtists">
-      <section>
-        <SectionHeading />
-      </section>
 
-      <section className="flex items-center justify-around w-[100%]">
+  return (
+    <section className="flex flex-col overflow-hidden" id="topArtists">
+      <SectionHeading title="Artists" />
+
+      <div className="flex items-center justify-start overflow-x-scroll mt-5 no-scrollbar  gap-1 ">
         {artists?.map((items, index) => (
           <ArtistCard
             key={items?.id}
-            index={index}
+            index={index + 1}
             name={items?.name}
-            image={items?.images[1]}
+            image={items?.images[2]}
           />
         ))}
-      </section>
-
-      <Link href={"/Stats/topArtists"}>
+      </div>
+      <Link href={"/topArtists"}>
         <section className="mt-[1.5rem] flex justify-end  gap-x-1 items-center  ">
           <h4 className="font-bold">SEE ALL</h4>
           <div className="md:hidden contents">{next}</div>

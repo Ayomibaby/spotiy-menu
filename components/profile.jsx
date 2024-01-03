@@ -5,9 +5,8 @@ import React from "react";
 
 export default function Profile() {
   const { data: session} = useSession()
-  console.log(session)
   return (
-    <section className="w-[100%] bg-[#121213]">
+    <section className="w-[100%]  mt-5 bg-[#121213]">
       <div className="w-[90%] md:w-[95%] mx-auto py-[2.5rem] flex justify-center ">
         <div  className="flex gap-x-2 items-center">
         <div>

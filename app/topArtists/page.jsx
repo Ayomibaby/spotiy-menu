@@ -1,4 +1,4 @@
-import ArtistCard from "@/components/artistCard";
+import ArtistCard from "@/components/ArtistCard";
 import SectionHeading from "@/components/sectionHeading";
 import React from "react";
 
