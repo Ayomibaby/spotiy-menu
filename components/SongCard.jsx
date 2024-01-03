@@ -1,25 +1,21 @@
 import Image from 'next/image'
 import React from 'react'
 
-export default function SongCard() {
+export default function SongCard({ index, image, name, artist }) {
   return (
-  <section className='mt-[1.5rem] '>
-    <div className=''>
-    <Image
-    src={"https://res.cloudinary.com/dhvwthnzq/image/upload/v1694272158/Rectangle_5642_lebbxq.svg"}
-    width={70}
-    height={50}
-    alt='song cover'
-    className=' md:w-[80%] md:h-[200px]'
-    />
-    </div>
-
-    <div>
-    <h6 className='md:text-[1.2rem]'>1. STAR LIFE</h6>
-    <h5 className='text-white my-[0.25rem] md:text-[1rem]'>BlaqBonez</h5>
-    <h4 className='text-[#898989] md:text-[1rem]'>40 Plays</h4>
-    </div>
-
-  </section>
+    <section className="w-24 p-1 flex flex-col items-start justify-center flex-nowrap">
+      <Image
+        src={image?.url}
+        height={image?.height}
+        width={image?.width}
+        alt="cong cover"
+        className="mb-[0.5rem] md:w-[80%] h-16 w-16 object-fill rounded-sm flex items-center  "
+      />
+      <div className=" justify-start  overflow-hidden w-24 items-start flex flex-col ">
+        <h6 className="text-white text-ellipsis text-start ">{index}. {name}</h6>
+        <h6 className='text-white text-start  '>{artist}</h6>
+        <h4 className="text-[#898989] mt-[0.25rem]">37 Plays</h4>
+      </div>
+    </section>
   )
 }
