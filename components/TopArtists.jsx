@@ -4,7 +4,6 @@ import { MoreCircle, dropdown, next } from "@/public/assets/svg/moreCircle";
 import SectionHeading from "./sectionHeading";
 import Link from "next/link";
 import { useSession } from "next-auth/react";
-import spotifyApi from "@/lib/spotify";
 import useSpotify from "@/hooks/useSpotify";
 import ArtistCard from "@/components/ArtistCard";
 
@@ -16,7 +15,7 @@ export default function TopArtists() {
   useEffect(() => {
     if (spotifyApi.getAccessToken) {
       spotifyApi
-        .getMyTopArtists({time_range: "long_term"})
+        .getMyTopArtists({time_range: "short_term"})
         .then((data) => {
           setArtists(data.body.items.slice(0, 7))
           console.log(data)
@@ -51,12 +50,3 @@ export default function TopArtists() {
   );
 }
 
-export const getServerSideProps = async () => {
-  const data = spotifyApi.getMyTopArtists().then;
-  console.log(providers);
-  return {
-    props: {
-      providers,
-    },
-  };
-};

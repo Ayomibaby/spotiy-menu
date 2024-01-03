@@ -4,9 +4,7 @@ import Image from "next/image";
 import React, { useEffect } from "react";
 
 export default function ArtistCard({ index, image, name }) {
-  useEffect(() => {
-    console.log(name, image);
-  }, [image, name]);
+
   return (
     <section className="w-24 p-1 flex flex-col items-center justify-center flex-nowrap">
       <Image

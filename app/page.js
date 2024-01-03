@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <main className=" flex flex-col items-center">
       <Profile />
-      <div className=" md:w-[95%] w-full px-5 mt-[2rem] ">
+      <div className=" md:w-[95%] w-full px-5 my-[2rem] flex flex-col gap-12 ">
         <TopArtists />
         <TopSongs />
       </div>
