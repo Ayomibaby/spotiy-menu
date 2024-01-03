@@ -10,13 +10,13 @@ import TopSongs from "@/components/TopSongs";
 
 export default function Home() {
   return (
-    <>
+    <main className=" flex flex-col items-center">
       <Profile />
-      <div className="w-[90%] md:w-[95%] mx-auto mt-[2rem] ">
+      <div className=" md:w-[95%] w-full px-5 mt-[2rem] ">
         <TopArtists />
         <TopSongs />
       </div>
       <Footer />
-    </>
+    </main>
   );
 }

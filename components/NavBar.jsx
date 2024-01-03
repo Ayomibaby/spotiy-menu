@@ -10,16 +10,14 @@ export default function NavBar() {
   const [navbar, setNavbar] = useState(false);
   const { data: session } = useSession();
 
-  console.log(session);
-
   return (
-    <nav className="h-[4rem]  bg-[#121213]  pt-[1.5rem] ">
+    <nav className="h-fit py-3 fixed w-screen  bg-[#121213] ">
       <div className="w-[90%] md:w-[95%] mx-auto flex justify-between items-center">
         <h2>
           <Link href={"/Stats/home"}> LOGO </Link>
         </h2>
 
-        <ul className="flex gap-x-4">
+        <ul className="flex gap-x-4 items-center">
           <li>Contact us</li>
           <SpotifySignOut />
         </ul>
