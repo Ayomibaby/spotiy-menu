@@ -30,18 +30,18 @@ export default function TopArtists({ str }) {
       {/* <Profile /> */}
 
       <section className="px-5 ">
-        <SectionHeading  />
+        <SectionHeading title={"Artists"} />
 
-      <section className="my-5  grid md:grid-cols-5 grid-cols-1 w-full  justify-left gap-x-5">
-        {artists?.map((items, index) => (
-          <ArtistCardList
-            key={items?.id}
-            index={index + 1}
-            name={items?.name}
-            image={items?.images[2]}
-          />
-        ))}
-      </section>
+        <section className="my-5  grid md:grid-cols-5 grid-cols-1 w-full  justify-left gap-x-5">
+          {artists?.map((items, index) => (
+            <ArtistCardList
+              key={items?.id}
+              index={index + 1}
+              name={items?.name}
+              image={items?.images[2]}
+            />
+          ))}
+        </section>
       </section>
     </section>
   );

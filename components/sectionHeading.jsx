@@ -2,7 +2,7 @@ import { MoreCircle, dropdown } from "@/public/assets/svg/moreCircle";
 import React, { useState } from "react";
 
 export default function SectionHeading({ title }) {
-  const [dropdown, setDropdown] = useState(false);
+  const [dropDown, setDropDown] = useState(false);
   const [range, setRange] = useState({ range: "short_term", text: "4 Weeks" });
 
   return (
@@ -20,40 +20,40 @@ export default function SectionHeading({ title }) {
       </div>
       <div className="relative w-fit">
         <div
-          onClick={() => setDropdown((prev) => !prev)}
-          className="flex justify-between  w-[5rem] items-center border-[1.5px] border-[#22C55E] rounded-[0.1875rem] py-[0.25rem] px-[0.5rem]"
+          onClick={() => setDropDown((prev) => !prev)}
+          className="flex cursor-pointer justify-between  w-[5rem] items-center border-[1.5px] border-[#22C55E] rounded-[0.1875rem] py-[0.25rem] px-[0.5rem]"
         >
           <h4>
-            {range.text} {dropdown}
+            {range.text}
           </h4>
-          <span></span>
+          <span>{dropdown}</span>
         </div>
-        {dropdown && (
+        {dropDown && (
           <ul className="absolute z-20  w-[5rem] right-0 text-[#22C55E] text-[10px] flex flex-col items-start gap-2  border-[#22C55E] border-[1.5px] rounded-b-md bg-black">
             <li
               onClick={() => {
                 setRange({ range: "short_term", text: "4 Weeks" });
-                setDropdown((prev) => !prev);
+                setDropDown((prev) => !prev);
               }}
-              className="bg-black font-medium cursor-pointer w-full pl-2 py-1  hover:bg-[#22c55e] hover:text-white"
+              className="bg-black font-medium cursor-pointer w-full pl-2 py-1 transition duration-300 ease-in-out  hover:bg-[#22c55e] hover:text-white"
             >
               4 Weeks
             </li>
             <li
               onClick={() => {
                 setRange({ range: "medium_term", text: "6 Months" });
-                setDropdown((prev) => !prev);
+                setDropDown((prev) => !prev);
               }}
-              className="bg-black font-medium cursor-pointer w-full pl-2 py-1  hover:bg-[#22c55e] hover:text-white"
+              className="bg-black font-medium cursor-pointer w-full pl-2 py-1 transition duration-300 ease-in-out  hover:bg-[#22c55e] hover:text-white"
             >
               6 Months
             </li>
             <li
               onClick={() => {
                 setRange({ range: "long_term", text: "All Time" });
-                setDropdown((prev) => !prev);
+                setDropDown((prev) => !prev);
               }}
-              className="bg-black font-medium cursor-pointer w-full pl-2 py-1  hover:bg-[#22c55e] hover:text-white"
+              className="bg-black font-medium cursor-pointer w-full pl-2 py-1 transition duration-300 ease-in-out  hover:bg-[#22c55e] hover:text-white"
             >
               All Time
             </li>
