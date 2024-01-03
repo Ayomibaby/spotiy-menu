@@ -3,7 +3,7 @@
 import {
   SpotifySignInButton,
   SpotifySignOut,
-} from "@/components/Buttons/SpotifySignInButton";
+} from "@/components/SpotifySignInButton";
 import List from "@/components/List";
 import Spotify from "next-auth/providers/spotify";
 import { getProviders, useSession } from "next-auth/react";

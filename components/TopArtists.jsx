@@ -1,8 +1,8 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { MoreCircle, dropdown, next } from "@/public/assets/svg/moreCircle";
-import ArtistCard from "../UI/artistCard";
-import SectionHeading from "../UI/sectionHeading";
+import ArtistCard from "./artistCard";
+import SectionHeading from "./sectionHeading";
 import Link from "next/link";
 import { useSession } from "next-auth/react";
 import spotifyApi from "@/lib/spotify";
@@ -14,7 +14,9 @@ export default function TopArtists() {
   const [artists, setArtists] = useState([]);
   useEffect(() => {
     if (spotifyApi.getAccessToken) {
-      spotifyApi.getMyTopArtists().then((data) => setArtists(data.body.items.slice(0,5)));
+      spotifyApi
+        .getMyTopArtists()
+        .then((data) => setArtists(data.body.items.slice(0, 5)));
     }
   }, [session, spotifyApi]);
   return (
