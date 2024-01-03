@@ -1,3 +1,38 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+h3 {
+    @apply border border-gray-300 rounded  text-white;
+  }
+
+h2{
+    @apply text-white text-[1.125rem] font-bold md:text-[1.875rem]
+   
+}
+
+
+
+
+h5{
+    @apply text-white text-[0.75rem] font-medium  md:text-[1rem]
+  
+}
+
+    
+h4{
+   @apply text-[#22C55E] text-[0.625rem] font-normal md:text-[1rem]
+
+}
+
+h6{
+    @apply text-white text-[0.75rem] font-bold md:text-[1.5rem]
+  
+}
+
+li{
+    @apply text-white text-[0.65rem] font-medium md:text-[1rem] 
+   
+
+}

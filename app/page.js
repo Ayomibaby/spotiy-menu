@@ -1,13 +1,22 @@
-import List from '@/components/List'
-import Image from 'next/image'
+/* eslint-disable react/no-unescaped-entities */
+import { SpotifySignOut } from "@/components/SpotifySignInButton";
+import List from "@/components/List";
+import Spotify from "next-auth/providers/spotify";
+import { signOut } from "next-auth/react";
+import Footer from "@/components/footer";
+import Profile from "@/components/profile";
+import TopArtists from "@/components/TopArtists";
+import TopSongs from "@/components/TopSongs";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen  flex-col items-center font-white bg-[#090A0C]">
-      <div className='h-46 text-white mt-20 '>
-jhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
+    <>
+      <Profile />
+      <div className="w-[90%] md:w-[95%] mx-auto mt-[2rem] ">
+        <TopArtists />
+        <TopSongs />
       </div>
-      <List/>
-    </main>
-  )
+      <Footer />
+    </>
+  );
 }
