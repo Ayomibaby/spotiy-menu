@@ -6,7 +6,7 @@ export async function middleware(req) {
     req,
     secret: process.env.NEXT_PUBLIC_JWT_SECRET,
   });
-  const { pathname, origin } = req.nextUrl;
+  const { pathname } = req.nextUrl;
   if (pathname.includes("/api/auth") || token) {
     return NextResponse.next();
   }
