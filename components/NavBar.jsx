@@ -3,9 +3,14 @@ import Link from "next/link";
 import { useState } from "react";
 
 import Image from "next/image";
+import { SpotifySignOut } from "./SpotifySignInButton";
+import { useSession } from "next-auth/react";
 
 export default function NavBar() {
   const [navbar, setNavbar] = useState(false);
+  const { data: session } = useSession();
+
+  console.log(session);
 
   return (
     <nav className="h-[4rem]  bg-[#121213]  pt-[1.5rem] ">
@@ -15,10 +20,8 @@ export default function NavBar() {
         </h2>
 
         <ul className="flex gap-x-4">
-        <li>Contact us</li>
-        <Link href={"/"}>
-          <li>Logout</li>
-          </Link>
+          <li>Contact us</li>
+          <SpotifySignOut />
         </ul>
       </div>
     </nav>

@@ -16,7 +16,7 @@ export default function SectionHeading() {
         </h5>
       </div>
       <div className="md:hidden contents">
-        <div className="flex gap-x-2 items-center border border-[1.5px] border-solid border-[#22C55E] rounded-[0.1875rem] py-[0.25rem] px-[0.5rem]">
+        <div className="flex gap-x-2 items-center border-[1.5px] border-solid border-[#22C55E] rounded-[0.1875rem] py-[0.25rem] px-[0.5rem]">
           <h4>4 weeks</h4>
           <div>{dropdown}</div>
         </div>

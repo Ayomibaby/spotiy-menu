@@ -1,19 +1,22 @@
-
 import axios from "axios";
 import { NextResponse } from "next/server";
 
-
 const topTracks = async () => {
   const  access_token  = await getAccessToken();
-  // const response = await fetch("https://api.spotify.com/v1/me/top/tracks", {headers});
-   const response = axios.get("https://api.spotify.com/v1/me/top/tracks", {
-    headers: {
+  const headers = {
+      headers: {
       Authorization: `Bearer ${access_token}`,
     },
-  });
-  return response.json()
+  }
+  const response = await fetch("https://api.spotify.com/v1/me/top/tracks", {headers});
+  // const response = axios.get("https://api.spotify.com/v1/me/top/tracks", {
+  //   headers: {
+  //     Authorization: `Bearer ${access_token}`,
+  //   },
+  // });
+  console.log(response, "bjkhgtr")
+  return response.json();
 };
-
 
 const getAccessToken = async () => {
   const refresh_token = process.env.SPOTIFY_REFRESH_TOKEN;
@@ -31,20 +34,17 @@ const getAccessToken = async () => {
       refresh_token,
     }),
   });
-console.log(response)
+console.log("ghj")
   return response.json();
 };
 
 export async function GET() {
+  const { data } = await topTracks();
 
+  console.log(data, "hi");
 
-  const  {data } = await topTracks();
-
-
-  console.log(data.status, "hi");
-
-  const { items } = await response.json();
-
+  const { items } = await fetch("https://api.spotify.com/v1/me/top/tracks")
+console.log(items)
   const tracks = items.slice(0, 5).map((track) => ({
     title: track.name,
     artist: track.artists.map((_artist) => _artist.name).join(", "),
@@ -52,5 +52,5 @@ export async function GET() {
     coverImage: track.album.images[1],
   }));
 
-  return NextResponse.json(data);
+  return NextResponse.json(tracks);
 }

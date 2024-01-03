@@ -1,6 +1,6 @@
 import React from "react";
-import SectionHeading from "../UI/sectionHeading";
-import SongCard from "../UI/SongCard";
+import SectionHeading from "./sectionHeading";
+import SongCard from "./SongCard";
 import { next } from "@/public/assets/svg/moreCircle";
 import Link from "next/link";
 
