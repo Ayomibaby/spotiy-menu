@@ -1,18 +1,22 @@
 /* eslint-disable react/no-unescaped-entities */
-
-
-import Link from "next/link";
+import { SpotifySignOut } from "@/components/SpotifySignInButton";
+import List from "@/components/List";
+import Spotify from "next-auth/providers/spotify";
+import { signOut } from "next-auth/react";
+import Footer from "@/components/footer";
+import Profile from "@/components/profile";
+import TopArtists from "@/components/TopArtists";
+import TopSongs from "@/components/TopSongs";
 
 export default function Home() {
   return (
-   <section className="flex h-screen bg-black ">
-    {/* <Loader/> */}
-    <div className="m-auto">
-    <h2 className="text-center mb-[1rem]">Logo</h2>
-    <Link href={"/Stats/home"}>
-    <button className="text-white font-semibold text-[1rem] border border-white rounded-lg py-[1rem] px-[1rem] hover:bg-white hover:text-black">Login with spotify</button>
-    </Link>
-    </div>
-   </section>
+    <>
+      <Profile />
+      <div className="w-[90%] md:w-[95%] mx-auto mt-[2rem] ">
+        <TopArtists />
+        <TopSongs />
+      </div>
+      <Footer />
+    </>
   );
 }
