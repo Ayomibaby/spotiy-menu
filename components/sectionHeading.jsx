@@ -1,32 +1,34 @@
-import { MoreCircle, dropdown } from "@/public/assets/svg/moreCircle";
+
+"use client"
+import { DropdownUp, MoreCircle, dropdown, dropdownUp } from "@/public/assets/svg";
 import React, { useState } from "react";
 
-export default function SectionHeading({ title }) {
+export default function SectionHeading({ title, range, setRange, page , view, setView }) {
   const [dropDown, setDropDown] = useState(false);
-  const [range, setRange] = useState({ range: "short_term", text: "4 Weeks" });
 
   return (
-    <section id="heading" className="flex justify-between items-center w-full">
+    <section id="heading" className="flex justify-between items-start w-full">
       <div>
         <div className="flex gap-x-2 items-center">
           <h2>Top {title}</h2>
 
           <div>{MoreCircle}</div>
         </div>
-        <h5 className="mt-[0.5rem] flex gap-x-1">
-          You listened to <span className="text-[#22C55E]">17 {title}</span>
-          this past week
-        </h5>
+        {!page && (
+          <h5 className="mt-[0.5rem] flex gap-x-1">
+            You listened to <span className="text-[#22C55E]">17 {title}</span>
+            this past week
+          </h5>
+        )}
       </div>
-      <div className="relative w-fit">
+      <div className="relative w-fit flex gap-2">
+        <span onClick={()=>setView("grid")} className="text-slate-200 text-xs">{view}</span>
         <div
           onClick={() => setDropDown((prev) => !prev)}
           className="flex cursor-pointer justify-between  w-[5rem] items-center border-[1.5px] border-[#22C55E] rounded-[0.1875rem] py-[0.25rem] px-[0.5rem]"
         >
-          <h4>
-            {range.text}
-          </h4>
-          <span>{dropdown}</span>
+          <h4>{range.text}</h4>
+          <span>{dropDown ? dropdownUp :  dropdown }</span>
         </div>
         {dropDown && (
           <ul className="absolute z-20  w-[5rem] right-0 text-[#22C55E] text-[10px] flex flex-col items-start gap-2  border-[#22C55E] border-[1.5px] rounded-b-md bg-black">
@@ -59,19 +61,6 @@ export default function SectionHeading({ title }) {
             </li>
           </ul>
         )}
-        {/* <select onClick={handleRange} className="absolute right-0 text-[#22C55E] text-[10px] flex flex-col gap-4  border-[#22C55E] border-[1.5px] rounded-[0.1875rem] bg-black py-[0.25rem] px-[0.5rem] ">
-          <option value="short_term"  className="bg-black font-medium border-[#22C55E] border-[1.5px]  hover:bg-[#22c55e] hover:text-white" defaultValue selected>4 Weeks</option>
-          <option value="medium_term" className="bg-black font-medium border-[#22C55E] border-[1.5px]  focus:bg-[#22c55e] hover:text-pink-900" >6 Months</option>
-          <option value="long_term" className="bg-black font-medium border-[#22C55E] border-[1.5px]  hover:bg-[#22c55e] hover:text-white" >All Time</option>
-        </select> */}
-      </div>
-
-      <div className="md:contents hidden">
-        <div className="flex gap-x-4 ">
-          <h2 className="text-[0.85rem] text-[#22C55E] ">THIS WEEK</h2>
-          <h2 className="text-[0.85rem] text-[#898989]">4 WEEKS</h2>
-          <h2 className="text-[0.85rem] text-[#898989]">CHOOSE DATE</h2>
-        </div>
       </div>
     </section>
   );

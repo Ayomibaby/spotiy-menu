@@ -17,7 +17,7 @@ export const metadata = {
 export default function RootLayout({ children, session }) {
   return (
     <html lang="en">
-      <body className={`${dm_Sans.className} bg-black  overflow-hidden relative`}>
+      <body className={`${dm_Sans.className} bg-black  relative`}>
         <Provider session={session}>
           <NavBar />
           {children}

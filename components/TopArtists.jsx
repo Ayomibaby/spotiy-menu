@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { MoreCircle, dropdown, next } from "@/public/assets/svg/moreCircle";
+import { MoreCircle, dropdown, next } from "@/public/assets/svg";
 import SectionHeading from "./sectionHeading";
 import Link from "next/link";
 import { useSession } from "next-auth/react";
@@ -11,24 +11,25 @@ export default function TopArtists() {
   const spotifyApi = useSpotify();
   const { data: session } = useSession();
   const [artists, setArtists] = useState([]);
+  const [range, setRange] = useState({ range: "short_term", text: "4 Weeks" });
 
   useEffect(() => {
     if (spotifyApi.getAccessToken) {
       spotifyApi
-        .getMyTopArtists({time_range: "short_term"})
+        .getMyTopArtists({ time_range: range.range })
         .then((data) => {
-          setArtists(data.body.items.slice(0, 7))
-          console.log(data)
+          setArtists(data.body.items.slice(0, 7));
+          console.log(data, "compoenet");
         })
-        .catch(err =>{
-          return err
+        .catch((err) => {
+          return err;
         });
     }
-  }, [session, spotifyApi]);
+  }, [session, spotifyApi, range]);
 
   return (
     <section className="flex flex-col overflow-hidden" id="topArtists">
-      <SectionHeading title="Artists" />
+      <SectionHeading title="Artists" range={range} setRange={setRange} />
 
       <div className="flex items-center justify-start overflow-x-scroll mt-5 no-scrollbar  gap-1 ">
         {artists?.map((items, index) => (
@@ -49,4 +50,3 @@ export default function TopArtists() {
     </section>
   );
 }
-

@@ -1,8 +1,8 @@
-'use client'
+"use client";
 import React, { useEffect, useState } from "react";
 import SectionHeading from "./sectionHeading";
 import SongCard from "./SongCard";
-import { next } from "@/public/assets/svg/moreCircle";
+import { next } from "@/public/assets/svg";
 import Link from "next/link";
 import { useSession } from "next-auth/react";
 import useSpotify from "@/hooks/useSpotify";
@@ -11,27 +11,28 @@ export default function TopSongs() {
   const spotifyApi = useSpotify();
   const { data: session } = useSession();
   const [tracks, setTracks] = useState([]);
+  const [range, setRange] = useState({ range: "short_term", text: "4 Weeks" });
 
   useEffect(() => {
     if (spotifyApi.getAccessToken) {
       spotifyApi
-        .getMyTopTracks({time_range: "short_term"})
+        .getMyTopTracks({ time_range: range.range })
         .then((data) => {
-          setTracks(data.body.items.slice(0, 7))
-          console.log(data)
+          setTracks(data.body.items.slice(0, 7));
+          console.log(data, "song comp");
         })
-        .catch(err =>{
-          return err
+        .catch((err) => {
+          return err;
         });
     }
-  }, [session, spotifyApi]);
+  }, [session, spotifyApi, range]);
 
   return (
     <section className="flex flex-col overflow-hidden">
-      <SectionHeading title={"Songs"}/>
+      <SectionHeading title={"Songs"} range={range} setRange={setRange} />
 
       <section className="flex items-start justify-start overflow-x-scroll mt-5 no-scrollbar  gap-1 ">
-      {tracks?.map((items, index) => (
+        {tracks?.map((items, index) => (
           <SongCard
             key={items?.id}
             index={index + 1}
@@ -42,7 +43,7 @@ export default function TopSongs() {
         ))}
       </section>
 
-      <Link href={"/Stats/topTracks"}>
+      <Link href={"/topTracks"}>
         <section className="mt-[1.5rem] flex  gap-x-1  items-center justify-end ">
           <h4 className="font-bold">SEE ALL</h4>
           <div className="md:hidden contents">{next}</div>
