@@ -1,5 +1,6 @@
+
 import NavBar from "@/components/NavBar";
-import "./globals.css"
+import "./globals.css";
 import { Inter, DM_Sans } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -13,10 +14,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${dm_Sans.className} bg-black `}>
-       <section>
-        {children}
-        </section>
+      <body className={`${dm_Sans.className} bg-black`}>
+       <NavBar/>
+       {children}
       </body>
     </html>
   );

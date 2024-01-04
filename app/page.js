@@ -1,11 +1,11 @@
 /* eslint-disable react/no-unescaped-entities */
-import List from "@/components/List";
+
 
 import Link from "next/link";
 
 export default function Home() {
   return (
-   <section className="flex h-screen ">
+   <section className="flex h-screen bg-black ">
     {/* <Loader/> */}
     <div className="m-auto">
     <h2 className="text-center mb-[1rem]">Logo</h2>
