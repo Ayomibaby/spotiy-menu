@@ -1,30 +1,44 @@
-"use client"
+"use client";
+import useSpotify from "@/hooks/useSpotify";
 import { useSession } from "next-auth/react";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 export default function Profile() {
-  const { data: session} = useSession()
-  console.log(session)
+  const spotifyApi = useSpotify();
+  const { data: session } = useSession();
+  const [followers, setFollowers] = useState([]);
+
+  useEffect(() => {
+    console.log(session);
+    if (spotifyApi.getAccessToken) {
+      spotifyApi
+        .getMe()
+        .then((data) => {
+          setFollowers(data.body.followers.total);
+          console.log(data.body);
+        })
+        .catch((err) => {
+          return err;
+        });
+    }
+  }, [session, spotifyApi]);
+
   return (
-    <section className="w-[100%] bg-[#121213]">
-      <div className="w-[90%] md:w-[95%] mx-auto py-[2.5rem] flex justify-center ">
-        <div  className="flex gap-x-2 items-center">
-        <div>
-          <Image
-            src={session?.user.image}
-            width={60}
-            height={60}
-            alt="artist picture"
-            className="rounded-full"
-          />
-        </div>
-        <div>
-          <h2>{session?.user.name}</h2>
-          <h5 className="text-[#BFBFBF]">1 follower</h5>
-        </div>
-        </div>
-      </div>
+    <section className="w-screen justify-center items-start gap-3 py-8 md:py-16 flex  h-full lg:h-56 mt-14 bg-[#121213]">   
+          <div>
+            <Image
+              src={session?.user.image}
+              width={60}
+              height={60}
+              alt="artist picture"
+              className="rounded-full h-9 w-9 md:h-16 md:w-16"
+            />
+          </div>
+          <div className="flex flex-col items-start">
+            <h2 className="text-white">{session?.user.name}</h2>
+            <h5 className="text-[#BFBFBF] text-[10px] md:text-sm">{followers ?? "--"} followers</h5>
+          </div>
     </section>
   );
 }

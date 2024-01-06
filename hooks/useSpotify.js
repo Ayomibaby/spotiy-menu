@@ -5,7 +5,9 @@ import React, { useEffect } from "react";
 const useSpotify = () => {
   const { data: session } = useSession();
   useEffect(() => {
-    if (session?.error === "RefreshAccessTokenError") signIn();
+    if (session?.error === "RefreshAccessTokenError") {
+      signIn();
+    }
     spotifyApi.setAccessToken(session?.user.accessToken);
   }, [session]);
   return spotifyApi;
