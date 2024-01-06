@@ -31,19 +31,21 @@ export default function TopArtists() {
     <section className="flex flex-col overflow-hidden" id="topArtists">
       <SectionHeading title="Artists" range={range} setRange={setRange} />
 
-      <div className="flex items-center justify-start overflow-x-scroll mt-5 no-scrollbar  gap-1 ">
+      <div className="flex items-start justify-start p-0 overflow-x-scroll mt-5 md:mt-10 lg:mt-16 no-scrollbar  gap-1 md:gap-2 lg:gap-[4rem]">
         {artists?.map((items, index) => (
           <ArtistCard
             key={items?.id}
             index={index + 1}
             name={items?.name}
-            image={items?.images[2]}
+            image={items?.images[0]}
           />
         ))}
       </div>
-      <Link href={"/topArtists"}>
-        <section className="mt-[1.5rem] flex justify-end  gap-x-1 items-center  ">
-          <h4 className="font-bold">SEE ALL</h4>
+      <Link href={"/topArtists"} className=" w-full">
+        <section className="mt-[1.5rem] flex  gap-1 cursor-pointer   items-center justify-end ">
+          <p className="font-bold text-[#306EF9] text-xs md:text-sm lg:text-base hover:bg-[#306EF9] hover:text-black lg:px-2 lg:py-1">
+            SEE ALL
+          </p>
           <div className="md:hidden contents">{next}</div>
         </section>
       </Link>
