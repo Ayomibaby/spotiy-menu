@@ -3,50 +3,40 @@
 @tailwind utilities;
 
 @layer utilities {
-    @variants responsive {
-      /* Hide scrollbar for Chrome, Safari and Opera */
-      .no-scrollbar::-webkit-scrollbar {
-          display: none;
-      }
+  @variants responsive {
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
 
-      /* Hide scrollbar for IE, Edge and Firefox */
-      .no-scrollbar {
-          -ms-overflow-style: none;  /* IE and Edge */
-          scrollbar-width: none;  /* Firefox */
-      }
+    /* Hide scrollbar for IE, Edge and Firefox */
+    .no-scrollbar {
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
     }
   }
+}
 
 h3 {
-    @apply border border-gray-300 rounded  text-white;
-  }
-
-h2{
-    @apply text-white text-[1.125rem] font-bold md:text-[1.875rem]
-   
+  @apply border border-gray-300 rounded  text-black;
 }
 
-
-
-
-h5{
-    @apply text-white text-[0.75rem] font-medium  md:text-[1rem]
-  
+h2 {
+  @apply text-black text-[1.125rem] font-bold md:text-[1.875rem];
 }
 
-    
-h4{
-   @apply text-[#22C55E] text-[0.625rem] font-normal md:text-[1rem]
-
+h5 {
+  @apply text-black text-[0.75rem] font-medium  md:text-[1rem];
 }
 
-h6{
-    @apply text-white text-[0.75rem] font-bold md:text-[1.5rem]
-  
+h4 {
+  @apply text-[#306EF9] text-[0.625rem] font-normal md:text-lg;
 }
 
-li{
-    @apply text-white text-[0.65rem] font-medium md:text-[1rem] 
-   
+h6 {
+  @apply text-black text-[0.75rem] font-bold md:text-lg;
+}
 
+li {
+  @apply text-black text-[0.65rem] font-medium md:text-[1rem];
 }
