@@ -13,7 +13,7 @@ export default function TopArtists({ str }) {
   const { data: session } = useSession();
   const [artists, setArtists] = useState([]);
   const [range, setRange] = useState({ range: "short_term", text: "4 Weeks" });
-  const [view, setView] = useState("list")
+  const [view, setView] = useState("list");
 
   useEffect(() => {
     if (spotifyApi.getAccessToken) {
@@ -29,28 +29,33 @@ export default function TopArtists({ str }) {
     }
   }, [session, spotifyApi, range]);
   return (
-    <section className="my-16 w-full md:w-[95%] flex flex-col">
+    <section className="my-16 md:my-20 w-full md:w-[95%] flex flex-col">
       {/* <Profile /> */}
-      <div className="flex w-full px-5 items-start mb-3 justify-start text-white">
+      <div className="flex w-full px-5 items-start mb-3 justify-start text-black">
         <Link href={"/"}>back</Link>
       </div>
-      <section className="px-5 ">
+      <section className="px-5 md:px-8">
         <SectionHeading
           page={true}
           title={"Artists"}
           range={range}
           setRange={setRange}
-          setView={setView} view={view} 
+          setView={setView}
+          view={view}
         />
 
-        <section className={`my-5  grid md:grid-cols-5 ${ view === "grid" ? "grid-cols-4" : "grid-cols-1" } w-full  justify-left gap-x-5`}>
+        <section
+          className={`my-5  grid  ${
+            view === "grid" ? "grid-cols-4 md:grid-cols-5" : "grid-cols-1"
+          } w-full  justify-left gap-5`}
+        >
           {artists?.map((items, index) => (
             <ArtistCardList
               key={items?.id}
               index={index + 1}
               name={items?.name}
               image={items?.images[2]}
-              view ={view}
+              view={view}
             />
           ))}
         </section>

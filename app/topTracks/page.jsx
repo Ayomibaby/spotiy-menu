@@ -13,7 +13,7 @@ export default function TopTracks() {
   const { data: session } = useSession();
   const [tracks, setTracks] = useState([]);
   const [range, setRange] = useState({ range: "short_term", text: "4 Weeks" });
-  const [view, setView] = useState("list")
+  const [view, setView] = useState("list");
 
   useEffect(() => {
     if (spotifyApi.getAccessToken) {
@@ -30,13 +30,23 @@ export default function TopTracks() {
   }, [session, spotifyApi, range]);
   return (
     <section className="my-16 w-full md:w-[95%] flex flex-col">
-      <div className="flex w-full px-5 items-start mb-3 justify-start text-white">
+      <div className="flex w-full px-5 items-start mb-3 justify-start text-black">
         <Link href={"/"}>back</Link>
       </div>
-      <section className="px-5">
-        <SectionHeading title={"Songs"} setView={setView} view={view} range={range} setRange={setRange} />
+      <section className="px-5  md:px-8">
+        <SectionHeading
+          title={"Songs"}
+          setView={setView}
+          view={view}
+          range={range}
+          setRange={setRange}
+        />
 
-        <section className="my-5  grid md:grid-cols-5 grid-cols-1 w-full  justify-left gap-x-5 ">
+        <section
+          className={`my-5  grid  ${
+            view === "grid" ? "grid-cols-4 md:grid-cols-5" : "grid-cols-1"
+          } w-full  justify-left gap-5`}
+        >
           {tracks?.map((items, index) => (
             <SongCardList
               key={items?.id}
