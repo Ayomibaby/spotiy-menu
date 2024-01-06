@@ -2,22 +2,28 @@
 import Image from "next/image";
 import React, { useEffect } from "react";
 
-export default function SongCardList({ index, image, name, artist }) {
+export default function SongCardList({ index, image, name, artist, view }) {
   return (
-    <section className="w-full  p-1 flex  gap-5 items-start justify-between ">
+    <section
+      className={`w-full  p-1 ${
+        view === "grid"
+          ? "flex-col justify-center gap-0  items-center"
+          : "justify-between gap-5"
+      } flex `}
+    >
       <div className="flex items-center justify-stretch gap-5">
-        <h4 className="text-sm mb-3 w-fit ">{index}</h4>
-        <span className="flex items-start w-full gap-5">
+        <h4 className=" mb-3 w-fit ">{index}</h4>
+        <span className="flex items-start md:items-center w-full gap-5 md:gap-8">
           <Image
             src={image?.url}
             height={image?.height}
             width={image?.width}
             alt="artist picture"
-            className="mb-[0.5rem] md:w-[80%] h-9 w-9 object-fill flex items-center  "
+            className="mb-[0.5rem] md:w-[4rem] md:h-[4rem] h-9 w-9 object-fill flex items-center  "
           />
           <span>
-            <h6 className="text-white text-xs">{name}</h6>
-            <h6 className="text-[10px]">{artist}</h6>
+            <p className="text-black text-xs lg:text-[23px] ">{name}</p>
+            <p className="text-[10px] md:text-sm">{artist}</p>
           </span>
         </span>
       </div>

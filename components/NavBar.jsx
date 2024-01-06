@@ -11,15 +11,17 @@ export default function NavBar() {
   const { data: session } = useSession();
 
   return (
-    <nav className=" py-3 top-0 z-50 fixed w-screen  bg-[#121213] ">
+    <nav className=" py-3 top-0 z-50 fixed w-screen border-b-2 border-b-gray-100 drop-shadow-sm  bg-white ">
       <div className="w-[90%] md:w-[95%] mx-auto flex justify-between items-center">
-        <h2>
+        <h2 className="text-black">
           <Link href={"/"}> LOGO </Link>
         </h2>
 
-        <ul className="flex gap-x-4 items-center">
-          <li>Contact us</li>
-          <SpotifySignOut />
+        <ul className="flex gap-3 items-center ">
+          <li className="text-black bg-yellow-500 hover:bg-yellow-400 cursor-pointer py-1 px-1 lg:px-3 rounded-md border-2 border-black">Contact us</li>
+          {
+            session && <SpotifySignOut />
+          }
         </ul>
       </div>
     </nav>

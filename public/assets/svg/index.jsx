@@ -59,7 +59,7 @@ export const dropdown = (
   >
     <path
       d="M6 1.3999L3.5 3.3999L1 1.3999"
-      stroke="#22C55E"
+      stroke="#306EF9"
       strokeLinecap="round"
       strokeLinejoin="round"
     />
@@ -76,22 +76,27 @@ export const next = (
   >
     <path
       d="M1 0.899902L3 3.3999L1 5.8999"
-      stroke="#22C55E"
+      stroke="#306EF9"
       strokeLinecap="round"
       strokeLinejoin="round"
     />
   </svg>
 );
 
-
 export const dropdownUp = (
-   (
-    <svg width="9.1" height="10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M5 15.5L12 8.5L19 15.5" stroke="#22C55E" strokeLinecap="round" strokeWidth="2.5" strokeLinejoin="round"/>
-</svg>
-
-  )
-)
-
-
-
+  <svg
+    width="9.1"
+    height="10"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M5 15.5L12 8.5L19 15.5"
+      stroke="#306EF9"
+      strokeLinecap="round"
+      strokeWidth="2.5"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
